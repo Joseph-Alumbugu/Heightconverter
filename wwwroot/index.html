@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project23</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+       
+        
+    </style>
+    <script type="module" src="Content/Project23.head.js"></script>
+</head>
+<body>
+    <div class="menubar">
+        <ul>
+            <li><a href="${Url_Home}">Home page</a></li>
+            <li><a href="${Url_Page1}">Form</a></li>
+        </ul>
+    </div>
+
+    <div ws-hole="MainContainer"></div>
+
+    <div ws-children-template="HomePage">
+      
+        <div class="form-container">
+            <div ws-replace="FormContainer" class="form-container">
+                <div ws-children-template="Form1">
+                    <h4 class="feedback-text">
+                        ${Title}
+                    </h4>
+                    <div class="form">
+                        <label>
+                            <span class="name">Name</span>
+                            <input ws-var="Name" class=""
+                                   placeholder="Jane Doe" />
+                        </label>
+                        <br />
+
+                        <label class="">
+                            <span class="customer-experience">
+                                Customer Experience
+                            </span>
+                            <select ws-var="ux" class="">
+
+                                <option>Neutral</option>
+                                <option>Satisfied</option>
+                                <option>Delighted</option>
+                            </select>
+                        </label>
+
+                        <br />
+                        <label class="message-label">
+                            <span class="message">Message</span><br />
+                            <textarea ws-var="Message" class=""
+                                      rows="3"
+                                      placeholder="Enter some long form content."></textarea>
+                        </label>
+                        <br />
+                        <div class="privacy-label">
+                            <label class="privacy">
+                                <input ws-var="PrivacyPolicy" type="checkbox" />
+
+                                <span class="privacy-text">
+                                    I agree to the
+                                    <span class="underline">privacy policy</span>
+                                </span>
+                            </label>
+                        </div>
+                        <br />
+                        
+                            <button class="btn" ws-onclick="OnSubmit">
+                                Submit
+                            </button>
+                       
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ws-template="conversionPage">
+
+        <div class="headline">
+            <div class="header">Height Converter</div>
+        </div>
+        <div class="conversionPage">
+
+            <div class="conversion-container">
+                <div class="text-display">Converting From  Feets To Centimeters and From Feets To Meters </div>
+                <input ws-var="input" class="display-input" type="text">
+                <div class="result">Result: ${convertFromResult} Ft = ${convertToResult1} CM = ${convertToResult2} M</div>
+                <a id="checkout" class="to-homepage" href="${ToHomepage}">Click ME</a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="module" src="Content/Project23.min.js"></script>
+</body>
+</html>
